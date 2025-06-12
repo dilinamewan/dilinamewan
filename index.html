@@ -3,66 +3,315 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dilina Mewan | Portfolio</title>
+  <title>Dilina Mewan | 3D Portfolio</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+  <!-- Custom CSS -->
   <style>
-    /* Custom styles */
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --success: #10b981;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding-top: 56px;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
     }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    
+    /* Navbar */
     .navbar {
-      transition: all 0.3s;
-      background-color: #212529;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    
     .navbar.scrolled {
-      background-color: #212529ee !important;
+      background-color: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
+    
+    .nav-link {
+      position: relative;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      color: var(--light) !important;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
-      color: white;
-      padding: 100px 0;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
-    section {
-      padding: 80px 0;
-    }
-    .project-card {
-      transition: transform 0.3s;
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
+    
+    .hero-title {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 600px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .hero-btn {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    /* 3D Background */
+    #canvas-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    /* Sections */
+    section {
+      padding: 8rem 0;
+      position: relative;
+    }
+    
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
+    
+    /* About Section */
+    .about-img {
+      border-radius: 20px;
+      overflow: hidden;
+      transform: perspective(1000px) rotateY(-15deg);
+      box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+      transition: transform 0.5s ease;
+    }
+    
+    .about-img:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    
+    /* Projects Section */
+    .project-card {
+      border-radius: 15px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+    }
+    
     .project-card:hover {
-      transform: translateY(-10px);
+      transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.03);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      border-color: rgba(99, 102, 241, 0.3);
     }
-    .skill-badge {
-      background-color: #f8f9fa;
-      border-radius: 5px;
-      padding: 15px;
-      text-align: center;
-      transition: all 0.3s;
+    
+    .project-img {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
-    .skill-badge:hover {
-      background-color: #e9ecef;
+    
+    .project-card:hover .project-img {
       transform: scale(1.05);
     }
+    
+    /* Skills Section */
+    .skill-item {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform-style: preserve-3d;
+      transform: perspective(500px) translateZ(0);
+    }
+    
+    .skill-item:hover {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: var(--primary);
+      transform: perspective(500px) translateZ(20px);
+    }
+    
+    .skill-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    /* Contact Section */
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--light);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary);
+      color: var(--light);
+      box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+    }
+    
+    /* Footer */
     footer {
-      background-color: #212529;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--light);
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background: var(--primary);
       color: white;
-      padding: 20px 0;
+      transform: translateY(-5px);
+    }
+    
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      section {
+        padding: 5rem 0;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Dilina Mewan</a>
-      <buttonbutton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+      <a class="navbar-brand fs-3 fw-bold" href="#">Dilina Mewan</a>
+      <buttonbutton class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        <span class="visually-hidden">Toggle navigation</span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -83,28 +332,57 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold mb-4">Hi, I'm Dilina Mewan</h1>
-      <p class="lead fs-4">Software Engineering Undergraduate | Web Developer | AI Enthusiast</p>
+  <!-- Hero Section with 3D Background -->
+  <section class="hero">
+    <div id="canvas-container"></div>
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="hero-title">Innovative Solutions Through Code</h1>
+          <p class="hero-subtitle">I'm Dilina Mewan, a software engineer specializing in web development, AI integration, and creating immersive digital experiences.</p>
+          <a href="#contact" class="btn btn-primary btn-lg hero-btn">Get In Touch</a>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
   <!-- About Section -->
-  <section id="about" class="bg-light">
+  <section id="about" class="bg-dark">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">About Me</h2>
+      <h2 class="section-title fade-in">About Me</h2>
       <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <img src="https://via.placeholder.com/600x400" alt="Profile" class="img-fluid rounded shadow">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About Me" class="img-fluid">
+          </div>
         </div>
-        <div class="col-lg-6">
-          <p class="fs-5">I'm a passionate software engineering undergraduate from Sri Lanka specializing in web development and AI solutions. With experience in multiple programming languages and frameworks, I build efficient and scalable applications.</p>
-          <p class="fs-5">My academic background combined with practical project experience allows me to approach problems with both theoretical knowledge and hands-on expertise.</p>
-          <div class="mt-4">
-            <a href="#contact" class="btn btn-primary btn-lg me-2">Contact Me</a>
-            <a href="#projects" class="btn btn-outline-primary btn-lg">View Projects</a>
+        <div class="col-lg-6 fade-in">
+          <h3 class="mb-4">Building Digital Experiences That Matter</h3>
+          <p class="mb-4 text-gray">With a passion for technology and problem-solving, I specialize in creating robust web applications and integrating AI solutions to solve real-world challenges.</p>
+          <p class="mb-4 text-gray">As a software engineering undergraduate, I combine academic knowledge with practical experience to deliver innovative solutions that push boundaries.</p>
+          <div class="row mt-5">
+            <div class="col-sm-6 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+                </div>
+                <div>
+                  <h5 class="mb-0">Education</h5>
+                  <p class="mb-0 text-gray">BSc in Software Engineering</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-4">
+              <div class="d-flex align-items-center">
+                <div class="me-3">
+                  <i class="fas fa-code fa-2x text-primary"></i>
+                </div>
+                <div>
+                  <h5 class="mb-0">Experience</h5>
+                  <p class="mb-0 text-gray">3+ Years in Development</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -112,34 +390,37 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" class="bg-dark">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">My Projects</h2>
+      <h2 class="section-title fade-in">Featured Projects</h2>
       <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card project-card shadow">
-            <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Project 1">
+        <!-- Project 1 -->
+        <div class="col-md-6 fade-in">
+          <div class="project-card h-100">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top project-img" alt="Online Auction System">
             <div class="card-body">
               <h3 class="card-title">Online Auction System</h3>
-              <p class="card-text">A full-stack auction platform built with ASP.NET Core and React featuring real-time bidding.</p>
-              <div class="mt-3">
-                <span class="badge bg-primary me-2">ASP.NET</span>
+              <p class="card-text text-gray">A sophisticated bidding platform with real-time updates, built with ASP.NET Core and React.</p>
+              <div class="mt-4">
+                <span class="badge bg-primary me-2">ASP.NET Core</span>
                 <span class="badge bg-primary me-2">React</span>
-                <span class="badge bg-primary">SQL Server</span>
+                <span class="badge bg-primary">SignalR</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card project-card shadow">
-            <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Project 2">
+        
+        <!-- Project 2 -->
+        <div class="col-md-6 fade-in">
+          <div class="project-card h-100">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a9e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top project-img" alt="Medical App">
             <div class="card-body">
-              <h3 class="card-title">Medical App</h3>
-              <p class="card-text">A Flutter-based healthcare application with appointment scheduling and patient management.</p>
-              <div class="mt-3">
+              <h3 class="card-title">HealthConnect Mobile App</h3>
+              <p class="card-text text-gray">A comprehensive health management application with appointment scheduling and telemedicine features.</p>
+              <div class="mt-4">
                 <span class="badge bg-primary me-2">Flutter</span>
                 <span class="badge bg-primary me-2">Firebase</span>
-                <span class="badge bg-primary">Dart</span>
+                <span class="badge bg-primary">Node.js</span>
               </div>
             </div>
           </div>
@@ -149,56 +430,73 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="bg-light">
+  <section id="skills" class="bg-dark">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">My Skills</h2>
+      <h2 class="section-title fade-in">Technical Skills</h2>
       <div class="row g-4">
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-html5 fa-3x text-danger mb-3"></i>
-            <h4>HTML/CSS</h4>
+        <!-- Skill 1 -->
+        <div class="col-md-4 fade-in">
+          <div class="skill-item h-100">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4>Frontend Development</h4>
+            <p class="text-gray">HTML5, CSS3, JavaScript, React, Bootstrap, Tailwind CSS</p>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-js-square fa-3x text-warning mb-3"></i>
-            <h4>JavaScript</h4>
+        
+        <!-- Skill 2 -->
+        <div class="col-md-4 fade-in">
+          <div class="skill-item h-100">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h4>Backend Development</h4>
+            <p class="text-gray">ASP.NET Core, C#, Node.js, Express, REST APIs, GraphQL</p>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-python fa-3x text-primary mb-3"></i>
-            <h4>Python</h4>
+        
+        <!-- Skill 3 -->
+        <div class="col-md-4 fade-in">
+          <div class="skill-item h-100">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h4>Database & DevOps</h4>
+            <p class="text-gray">SQL Server, MongoDB, Firebase, Docker, Azure, CI/CD</p>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-java fa-3x text-success mb-3"></i>
-            <h4>Java</h4>
+        
+        <!-- Skill 4 -->
+        <div class="col-md-4 fade-in">
+          <div class="skill-item h-100">
+            <div class="skill-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h4>Mobile Development</h4>
+            <p class="text-gray">Flutter, React Native, Android (Java/Kotlin)</p>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fas fa-database fa-3x text-info mb-3"></i>
-            <h4>SQL</h4>
+        
+        <!-- Skill 5 -->
+        <div class="col-md-4 fade-in">
+          <div class="skill-item h-100">
+            <div class="skill-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h4>AI & Data Science</h4>
+            <p class="text-gray">Python, TensorFlow, PyTorch, Pandas, NumPy</p>
           </div>
         </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-react fa-3x text-info mb-3"></i>
-            <h4>React</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-bootstrap fa-3x text-purple mb-3"></i>
-            <h4>Bootstrap</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="skill-badge">
-            <i class="fab fa-git-alt fa-3x text-danger mb-3"></i>
-            <h4>Git</h4>
+        
+        <!-- Skill 6 -->
+        <div class="col-md-4 fade-in">
+          <div class="skill-item h-100">
+            <div class="skill-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h4>Other Tools</h4>
+            <p class="text-gray">Git, GitHub, VS Code, Figma, Postman, Jira</p>
           </div>
         </div>
       </div>
@@ -206,42 +504,60 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="bg-dark">
     <div class="container">
-      <h2 class="text-center mb-5 fw-bold">Contact Me</h2>
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <form class="row g-3">
-            <div class="col-md-6">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" required>
+      <h2 class="section-title fade-in">Get In Touch</h2>
+      <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0 fade-in">
+          <div class="contact-form">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Subject">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in">
+          <h3 class="mb-4">Let's Collaborate</h3>
+          <p class="mb-4 text-gray">I'm currently open to new opportunities, collaborations, or just a friendly chat about technology and innovation.</p>
+          
+          <div class="d-flex align-items-center mb-4">
+            <div class="me-3">
+              <i class="fas fa-envelope fa-2x text-primary"></i>
             </div>
-            <div class="col-md-6">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+            <div>
+              <h5 class="mb-0">Email</h5>
+              <p class="mb-0 text-gray">dilinamewan07@gmail.com</p>
             </div>
-            <div class="col-12">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" class="form-control" id="subject" required>
+          </div>
+          
+          <div class="d-flex align-items-center mb-4">
+            <div class="me-3">
+              <i class="fab fa-github fa-2x text-primary"></i>
             </div>
-            <div class="col-12">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="5" required></textarea>
+            <div>
+              <h5 class="mb-0">GitHub</h5>
+              <aa href="https://github.com/dilinamewan" target="_blank" rel="noopener" class="text-gray">github.com/dilinamewan</a>
             </div>
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+          </div>
+          
+          <div class="d-flex align-items-center mb-4">
+            <div class="me-3">
+              <i class="fab fa-linkedin fa-2x text-primary"></i>
             </div>
-          </form>
-          <div class="mt-5 text-center">
-            <h4 class="mb-4">Or reach me directly at:</h4>
-            <p class="fs-5"><i class="fas fa-envelope me-2"></i> dilinamewan07@gmail.com</p>
-            <div class="mt-4">
-              <aa href="https://github.com/dilinamewan" target="_blank" rel="noopener" class="btn btn-outline-dark me-2">
-                <i class="fab fa-github me-1"></i> GitHub
-              </a>
-              <aa href="https://www.linkedin.com/in/dilina-mewan-a9528a205/" target="_blank" rel="noopener" class="btn btn-outline-primary">
-                <i class="fab fa-linkedin me-1"></i> LinkedIn
-              </a>
+            <div>
+              <h5 class="mb-0">LinkedIn</h5>
+              <aa href="https://www.linkedin.com/in/dilina-mewan-a9528a205/" target="_blank" rel="noopener" class="text-gray">linkedin.com/in/dilina-mewan</a>
             </div>
           </div>
         </div>
@@ -250,16 +566,136 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-4">
+  <footer>
     <div class="container">
-      <p class="mb-0">© 2025 Dilina Mewan. All rights reserved.</p>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <p class="mb-0">© 2025 Dilina Mewan. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
+  <!-- Three.js 3D Background -->
   <script>
+    // Initialize Three.js scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+    // Add lights
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+    
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+
+    // Create floating geometry
+    const geometries = [];
+    const colors = [0x6366f1, 0x8b5cf6, 0xec4899, 0xf43f5e, 0xf97316];
+    
+    for (let i = 0; i < 15; i++) {
+      let geometry;
+      const rand = Math.random();
+      
+      if (rand < 0.3) {
+        geometry = new THREE.TetrahedronGeometry(Math.random() * 0.5 + 0.5);
+      } else if (rand < 0.6) {
+        geometry = new THREE.OctahedronGeometry(Math.random() * 0.5 + 0.5);
+      } else {
+        geometry = new THREE.IcosahedronGeometry(Math.random() * 0.5 + 0.5);
+      }
+      
+      const material = new THREE.MeshPhongMaterial({
+        color: colors[Math.floor(Math.random() * colors.length)],
+        transparent: true,
+        opacity: 0.8,
+        shininess: 100,
+        wireframe: Math.random() > 0.7
+      });
+      
+      const mesh = new THREE.Mesh(geometry, material);
+      
+      // Position randomly in 3D space
+      mesh.position.x = (Math.random() - 0.5) * 20;
+      mesh.position.y = (Math.random() - 0.5) * 20;
+      mesh.position.z = (Math.random() - 0.5) * 20;
+      
+      // Random rotation
+      mesh.rotation.x = Math.random() * Math.PI;
+      mesh.rotation.y = Math.random() * Math.PI;
+      
+      // Store original positions for animation
+      mesh.userData = {
+        originalX: mesh.position.x,
+        originalY: mesh.position.y,
+        originalZ: mesh.position.z,
+        speedX: Math.random() * 0.02 - 0.01,
+        speedY: Math.random() * 0.02 - 0.01,
+        speedZ: Math.random() * 0.02 - 0.01,
+        rotationSpeedX: Math.random() * 0.01,
+        rotationSpeedY: Math.random() * 0.01
+      };
+      
+      scene.add(mesh);
+      geometries.push(mesh);
+    }
+
+    // Set camera position
+    camera.position.z = 10;
+
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      
+      // Animate geometries
+      geometries.forEach(mesh => {
+        // Float up and down
+        mesh.position.y = mesh.userData.originalY + Math.sin(Date.now() * 0.001) * 2;
+        
+        // Move slightly in X and Z
+        mesh.position.x += mesh.userData.speedX;
+        mesh.position.z += mesh.userData.speedZ;
+        
+        // Bounce back if too far
+        if (mesh.position.x > 15 || mesh.position.x < -15) mesh.userData.speedX *= -1;
+        if (mesh.position.z > 15 || mesh.position.z < -15) mesh.userData.speedZ *= -1;
+        
+        // Rotate
+        mesh.rotation.x += mesh.userData.rotationSpeedX;
+        mesh.rotation.y += mesh.userData.rotationSpeedY;
+      });
+      
+      renderer.render(scene, camera);
+    }
+    
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+
+  <!-- GSAP Animations -->
+  <script>
+    // Register ScrollTrigger and ScrollToPlugin
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
@@ -269,14 +705,76 @@
         navbar.classList.remove('scrolled');
       }
     });
-
+    
+    // Hero text animation
+    gsap.from('.hero-title', {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.3
+    });
+    
+    gsap.from('.hero-subtitle', {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.6
+    });
+    
+    gsap.from('.hero-btn', {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.9
+    });
+    
+    // Section animations
+    document.querySelectorAll('.fade-in').forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        delay: i * 0.1,
+        ease: 'power3.out'
+      });
+    });
+    
+    // Project card hover effect
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(1.03)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)';
+      });
+    });
+    
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const targetElem = document.querySelector(this.getAttribute('href'));
+        if (targetElem) {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+              y: targetElem,
+              offsetY: 70
+            },
+            ease: 'power3.out'
+          });
+        }
       });
     });
   </script>
