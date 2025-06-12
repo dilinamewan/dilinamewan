@@ -2,58 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dilina Mewan | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>H.P.G Dilina Mewan | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <header>
-    <h1>Dilina Mewan</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Dilina Mewan</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Hi, I'm H.P.G Dilina Mewan</h1>
+      <p class="lead">Software Engineering Undergraduate | Web Developer | AI Enthusiast | C#, Java & Python Learner</p>
+    </div>
   </header>
 
-  <section id="home">
-    <h2>Welcome to My Portfolio</h2>
-    <p>Software Engineering Undergraduate | Web Developer | AI Enthusiast</p>
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">About Me</h2>
+      <p class="text-center">I'm a passionate software engineering undergraduate from Sri Lanka. I specialize in web development, backend systems, and artificial intelligence. I'm currently working on projects using ASP.NET, React, and Python.</p>
+    </div>
   </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Dilina, a final-year Software Engineering student passionate about building AI-powered web apps and scalable systems.</p>
+  <!-- Projects -->
+  <section id="projects" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Online Auction System</h5>
+              <p class="card-text">An online platform for bidding, built using ASP.NET Core and React.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Medical App (Flutter)</h5>
+              <p class="card-text">A health management application built with Flutter and Firebase.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Car Auction Platform:</strong> Real-time bidding system using ASP.NET Core & SignalR</li>
-      <li><strong>ALEX AI Chatbot:</strong> Smart chatbot using Python and Gemini API</li>
-    </ul>
+  <!-- Skills -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Skills</h2>
+      <div class="row text-center">
+        <div class="col-md-3">HTML & CSS</div>
+        <div class="col-md-3">JavaScript & Bootstrap</div>
+        <div class="col-md-3">ASP.NET & C#</div>
+        <div class="col-md-3">Python & Java</div>
+      </div>
+    </div>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>React, ASP.NET Core, C#, Python, Flutter, Firebase, SQL Server, AWS</p>
+  <!-- Contact -->
+  <section id="contact" class="bg-dark text-white py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Me</h2>
+      <div class="text-center">
+        <p>Email: your.email@example.com</p>
+        <p>GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-white">github.com/yourusername</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-white">linkedin.com/in/yourprofile</a></p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:dilinamewan07@gmail.com">dilinamewan07@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/dilina-mewan-a9528a205" target="_blank" rel="noopener">Dilina Mewan</a></p>
-    <p>GitHub: <a href="https://github.com/DilinaMewan" target="_blank" rel="noopener">DilinaMewan</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Dilina Mewan. All rights reserved.</p>
+  <footer class="bg-primary text-white text-center py-3">
+    <small>&copy; 2025 Dilina Mewan. All rights reserved.</small>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
