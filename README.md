@@ -103,6 +103,36 @@
 </div>
 
 ---
+## 📛 GitHub Highlights & Achievements
+
+<p align="center">
+  
+  <!-- Identity -->
+  <img src="https://img.shields.io/github/followers/DilinaMewan?label=Followers&style=for-the-badge&color=4ECDC4" />
+  <img src="https://komarev.com/ghpvc/?username=DilinaMewan&label=Profile+Views&color=FF6B6B&style=for-the-badge"/>
+
+  <!-- Repo Achievements -->
+  <img src="https://img.shields.io/github/stars/DilinaMewan?style=for-the-badge&color=FFD700&label=Stars"/>
+  <img src="https://img.shields.io/github/forks/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&color=45B7D1&label=Forks"/>
+  <img src="https://img.shields.io/github/repo-size/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&label=Repo+Size&color=orange"/>
+
+  <!-- Contributions -->
+  <img src="https://img.shields.io/github/commit-activity/m/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&color=success&label=Commits"/>
+  <img src="https://img.shields.io/github/issues/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&label=Open+Issues&color=red"/>
+  <img src="https://img.shields.io/github/pull-requests/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&color=blue&label=PRs"/>
+
+  <!-- GitHub Productivity Tools -->
+  <img src="https://img.shields.io/github/languages/top/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&color=blueviolet&label=Top+Language"/>
+  <img src="https://img.shields.io/github/last-commit/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&color=9A6AFF&label=Last+Commit"/>
+  <img src="https://img.shields.io/github/license/DilinaMewan/AI-Chatbot-ALEX?style=for-the-badge&color=grey&label=License"/>
+
+  <!-- AI/ML Ecosystem -->
+  <img src="https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenCV-Enabled-27338e?style=for-the-badge&logo=OpenCV&logoColor=white" />
+  <img src="https://img.shields.io/badge/TensorFlow-Active-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+
+</p>
+
 
 ## 📊 GitHub Statistics
 
