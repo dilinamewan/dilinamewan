@@ -6,7 +6,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF6B6B,50:4ECDC4,100:45B7D1&height=200&section=header&text=Dilina%20Mewan&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Software%20Engineer%20%7C%20AI%20Enthusiast&descAlignY=55&descSize=20"/>
   
   <!-- Working Typing Animation -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=4000&pause=1000&color=FF6B6B&center=true&vCenter=true&width=600&lines=🎯+Software+Engineering+Student;🚀+Full-Stack+Developer;🤖+AI+%26+Machine+Learning+Enthusiast;💡+Building+Tomorrow's+Solutions" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=4000&pause=1000&color=FF6B6B&center=true&vCenter=true&width=600&lines=🎯+Software+Engineering+Student;🚀+Full-Stack+Developer;🤖+AI+%26+Machine+Learning+Enthusiast;💡+Building+Tomorrow's+Solutions" alt="Typing SVG"/>
   
   <br>
   
@@ -21,19 +21,24 @@
 
 > *"Code is poetry written in logic, and I'm here to craft digital symphonies."*
 
-```javascript
-const dilina = {
-  location: "Colombo, Sri Lanka 🇱🇰",
-  education: {
-    institution: "NSBM Green University",
-    degree: "Software Engineering",
-    gpa: "3.85/4.0",
-    status: "Final Year"
+```json
+{
+  "name": "H.P.G Dilina Mewan",
+  "location": "Colombo, Sri Lanka 🇱🇰",
+  "education": {
+    "institution": "NSBM Green University",
+    "degree": "Software Engineering",
+    "gpa": "3.85/4.0",
+    "status": "Final Year"
   },
-  currentFocus: ["AI Integration", "Cloud Architecture", "Modern Web Apps"],
-  philosophy: "Building scalable solutions that make a difference",
-  funFact: "I debug code better with music 🎵"
-};
+  "currentFocus": [
+    "AI Integration", 
+    "Cloud Architecture", 
+    "Modern Web Apps"
+  ],
+  "philosophy": "Building scalable solutions that make a difference",
+  "funFact": "I debug code better with music 🎵"
+}
 ```
 
 <div align="center">
