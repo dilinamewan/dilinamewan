@@ -1,202 +1,154 @@
-# H.P.G Dilina Mewan
-
+<!-- ============================================================
+     DILINA MEWAN · GITHUB PROFILE README
+     Repo: DilinaMewan/DilinaMewan
+     ============================================================ -->
+ 
 <div align="center">
-  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20&height=280&section=header&text=Dilina%20Mewan&fontSize=80&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=Software%20Engineer%20%7C%20AI%20Enthusiast%20%7C%20Full-Stack%20Developer&descAlignY=55&descSize=18"/>
-  
-  <br/>
-  
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=24&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&multiline=false&repeat=true&width=650&height=60&lines=Building+Tomorrow's+Solutions+Today+%F0%9F%9A%80;AI+%2B+Full-Stack+%3D+Innovation+%F0%9F%92%A1;Turning+Ideas+Into+Reality+%E2%9C%A8" alt="Typing SVG"/>
-  
-  <br/>
-  
-  <img src="https://komarev.com/ghpvc/?username=DilinaMewan&color=3b82f6&style=for-the-badge&label=PROFILE+VIEWS"/>
-  
-</div>
-
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1E3A8A,100:06B6D4&height=260&section=header&text=DILINA%20MEWAN&fontSize=72&fontColor=FFFFFF&fontAlignY=34&animation=fadeIn&desc=Software%20Engineer%20%C2%B7%20Deep%20Learning%20Researcher%20%C2%B7%20Full-Stack%20Builder&descSize=17&descAlignY=53"/>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=23&duration=2800&pause=900&color=22D3EE&center=true&vCenter=true&width=720&height=45&lines=Enterprise+.NET+Engineer+by+day+%E2%9A%99%EF%B8%8F;Multi-Modal+Deep+Learning+Researcher+by+night+%F0%9F%A7%A0;Shipping+production+systems+since+2025+%F0%9F%9A%80;Turning+slow+queries+into+sub-second+ones+%E2%9A%A1" alt="Typing SVG"/>
 <br/>
-
-## 🎯 Professional Summary
-
-<div align="center">
-
-```typescript
-const dilina = {
-    identity: {
-        name: "H.P.G Dilina Mewan",
-        role: "Software Engineering Student",
-        location: "Colombo, Sri Lanka 🇱🇰",
-        availability: "Open to opportunities"
-    },
-    education: {
-        university: "NSBM Green University",
-        degree: "BSc in Software Engineering",
-        gpa: "3.85/4.0",
-        year: "Final Year"
-    },
-    expertise: {
-        domains: ["Full-Stack Development", "AI/ML Integration", "Cloud Architecture"],
-        passion: ["Building scalable systems", "AI-powered solutions", "Modern web tech"],
-        motto: "Code with purpose, build with passion"
-    },
-    currentGoals: [
-        "🎓 Excel in final year project with AI focus",
-        "☁️ Master cloud-native architectures",
-        "🚀 Contribute to open-source projects",
-        "📚 Deep dive into microservices patterns"
-    ]
+<a href="https://www.linkedin.com/in/dilina-mewan-a9528a205/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="mailto:dilinamewan07@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://dilinamewan.github.io"><img src="https://img.shields.io/badge/Portfolio-06B6D4?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+<img src="https://komarev.com/ghpvc/?username=DilinaMewan&color=06B6D4&style=for-the-badge&label=PROFILE+VIEWS"/>
+ 
+<img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/>
+</div>
+## `>` whoami
+ 
+```ts
+const dilina: Engineer = {
+  role:      "Software Engineer @ Antler IT Solutions (AviorSys)",
+  focus:     ["Enterprise .NET Systems", "Multi-Modal Deep Learning", "Full-Stack Delivery"],
+  research:  "AMMFF — Adaptive Multi-Modal Fusion for Chest X-ray Diagnosis (PyTorch)",
+  education: { uni: "NSBM Green University", degree: "BSc (Hons) Software Engineering", gpa: 3.85 },
+  location:  "Colombo, Sri Lanka 🇱🇰",
+  shipping:  ["Sales Force Automation", "HRM", "Security Patrol Management"],
+  mindset:   "Measure it, ship it, then make it 88% faster.",
 };
 ```
-
-</div>
-
-<br/>
-
-## 💻 Technology Stack
-
+ 
+<div align="center"><img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/></div>
+## `>` experience.log
+ 
+<table>
+  <tr>
+    <td width="55%"><b>🏢 Software Engineer</b><br/><sub><b>Antler IT Solutions (AviorSys)</b> · 2026 → Present</sub></td>
+    <td>Enterprise <b>SFA</b>, <b>HRM</b> and <b>Security Patrol</b> platforms.<br/>C# · ASP.NET MVC · WCF · SQL Server · DevExtreme<br/>ML.NET sales forecasting · GitHub Actions CI/CD</td>
+  </tr>
+  <tr>
+    <td><b>🏦 Software Engineer Intern</b><br/><sub><b>Associated Motor Finance PLC</b> · Sep 2025 → Apr 2026</sub></td>
+    <td>Delivered <b>5 production financial systems</b> — FD Management, Payment Alerts, ICRR Calculation, Legal Statement Generator.<br/>.NET · Angular · SQL Server</td>
+  </tr>
+  <tr>
+    <td><b>🔬 Undergraduate Researcher</b><br/><sub><b>NSBM Green University</b> · Final Year</sub></td>
+    <td>Deep learning research on <b>missing-modality resilient</b> medical AI.<br/>PyTorch · MIMIC-CXR · CheXpert</td>
+  </tr>
+</table>
+<div align="center"><img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/></div>
+## `>` research.spotlight
+ 
 <div align="center">
-
-### Frontend Excellence
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Framer](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-
-### Backend Mastery
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=.net&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-
-### Mobile Innovation
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-
-### Data & Cloud
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-
-### AI & Intelligence
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
-
+### 🧠 AMMFF — Adaptive Multi-Modal Fusion Framework
+ 
 </div>
-
-<br/>
-
-
-
-## 📊 GitHub Performance Metrics
-
+> A deep learning architecture that fuses **chest X-ray imaging** with **18 structured clinical features** to predict the **14 CheXpert pathology labels** — and keeps performing when a modality goes missing at inference time.
+ 
+| | |
+|---|---|
+| **Architecture** | Adaptive Fusion Weighting (AFW) + Missing-Modality Reconstruction (MMR) |
+| **Data** | MIMIC-CXR-JPG (30,678 images) · CheXpert |
+| **Stack** | PyTorch · Google Colab / Kaggle GPUs · FastAPI + Angular + Docker (deployment platform) |
+| **Baselines** | Benchmarked against **DrFuse** and **MedFuse** |
+| **Status** | 7 model variants trained · best AUC **0.7428** · thesis in IEEE format |
+ 
+<div align="center"><img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/></div>
+## `>` tech.stack
+ 
 <div align="center">
-  
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=DilinaMewan&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=3B82F6&icon_color=3B82F6&text_color=C9D1D9&ring_color=3B82F6" alt="GitHub Stats"/>
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com?user=DilinaMewan&theme=react&hide_border=true&background=0D1117&stroke=3B82F6&ring=3B82F6&fire=F97316&currStreakLabel=3B82F6&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9" alt="GitHub Streak"/>
-  
-  <img width="99%" src="https://github-readme-activity-graph.vercel.app/graph?username=DilinaMewan&theme=react-dark&hide_border=true&bg_color=0D1117&color=3B82F6&line=3B82F6&point=F97316&area=true&area_color=3B82F6" alt="Contribution Graph"/>
-  
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DilinaMewan&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=3B82F6&text_color=C9D1D9&langs_count=8" alt="Top Languages"/>
-  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=DilinaMewan&theme=react&utcOffset=5.5" alt="Productive Time"/>
-
+**Core Engineering**
+ 
+<img src="https://skillicons.dev/icons?i=cs,dotnet,py,ts,js,java,php&theme=dark" />
+**Web & Mobile**
+ 
+<img src="https://skillicons.dev/icons?i=react,nextjs,angular,tailwind,nodejs,flutter,html,css&theme=dark" />
+**Data, AI & Cloud**
+ 
+<img src="https://skillicons.dev/icons?i=pytorch,tensorflow,mysql,postgres,firebase,docker,kubernetes,aws&theme=dark" />
+**Tooling**
+ 
+<img src="https://skillicons.dev/icons?i=git,github,githubactions,visualstudio,vscode,postman,linux,idea&theme=dark" />
+<sub>
+<img src="https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"/>
+<img src="https://img.shields.io/badge/WCF-512BD4?style=flat-square&logo=dotnet&logoColor=white"/>
+<img src="https://img.shields.io/badge/ML.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white"/>
+<img src="https://img.shields.io/badge/DevExtreme-FF5722?style=flat-square&logo=javascript&logoColor=white"/>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+<img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
+<img src="https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white"/>
+<img src="https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=anthropic&logoColor=white"/>
+</sub>
 </div>
-
-<br/>
-
-## 🏆 Achievements & Recognition
-
+<div align="center"><img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/></div>
+## `>` impact.metrics
+ 
 <div align="center">
-
-| 🎯 Achievement | 📋 Details |
-|:---:|:---|
-| 🎓 **Academic Excellence** | Maintained 3.85/4.0 GPA throughout software engineering degree |
-| 🐍 **Python Certified** | Advanced programming proficiency certification |
-| 🔧 **WSO2 Training** | Completed intensive Linux and DevOps fundamentals training |
-| 🌐 **Full-Stack Portfolio** | Successfully delivered 6+ production-ready web applications |
-| 🤖 **AI Research Focus** | Conducting advanced AI integration research for final year project |
-| 🏏 **Sports & Balance** | Active cricket and chess player promoting work-life balance |
-
+| ⚡ | Highlight |
+|:--:|:--|
+| **88%** | Query latency cut on the Outlet Performance report — **4,469 ms → 547 ms** via indexed temp tables + sargable filters |
+| **5** | Production financial systems delivered during the AMF PLC internship |
+| **7** | Deep learning model variants trained and benchmarked for AMMFF |
+| **3.85** | GPA / 4.0 — First Class Honours trajectory, NSBM Green University |
+| **CI/CD** | GitHub Actions pipeline built for the SFA platform QA deployments |
+| **Kaizen** | Continuous-improvement proposals submitted for the enterprise SFA system |
+| **WSO2** | DevOps training — microservices, Docker, Kubernetes, AWS |
+ 
 </div>
-
-<br/>
-
-## 🎯 Current Focus Areas
-
+<div align="center"><img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/></div>
+## `>` github.analytics
+ 
 <div align="center">
-
-```mermaid
-mindmap
-  root((Dilina))
-    Learning
-      Next.js 14 App Router
-      Docker & Kubernetes
-      GraphQL with Apollo
-      Microservices Architecture
-    Building
-      AI-Powered Applications
-      Real-time Systems
-      Cloud-Native Solutions
-    Research
-      Machine Learning Integration
-      Performance Optimization
-      Scalable Architectures
-    Growth
-      Open Source Contributions
-      Technical Writing
-      Community Engagement
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=DilinaMewan&show_icons=true&hide_border=true&bg_color=0D1117&title_color=22D3EE&icon_color=22D3EE&text_color=C9D1D9&ring_color=22D3EE&include_all_commits=true&rank_icon=github"/>
+<img width="49%" src="https://streak-stats.demolab.com?user=DilinaMewan&hide_border=true&background=0D1117&stroke=22D3EE&ring=22D3EE&fire=F97316&currStreakLabel=22D3EE&sideLabels=C9D1D9&currStreakNum=C9D1D9&sideNums=C9D1D9&dates=8B949E"/>
+<img width="99%" src="https://github-readme-activity-graph.vercel.app/graph?username=DilinaMewan&theme=react-dark&hide_border=true&bg_color=0D1117&color=22D3EE&line=22D3EE&point=F97316&area=true&area_color=1E3A8A"/>
+<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DilinaMewan&layout=compact&hide_border=true&bg_color=0D1117&title_color=22D3EE&text_color=C9D1D9&langs_count=8"/>
+<img width="58%" src="https://github-profile-trophy.vercel.app/?username=DilinaMewan&theme=algolia&no-frame=true&no-bg=true&column=4&row=2&margin-w=8&margin-h=8"/>
+<br/>
+<!-- Contribution snake — generated by .github/workflows/snake.yml -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DilinaMewan/DilinaMewan/output/github-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DilinaMewan/DilinaMewan/output/github-snake.svg"/>
+  <img width="99%" alt="github contribution snake animation" src="https://raw.githubusercontent.com/DilinaMewan/DilinaMewan/output/github-snake.svg"/>
+</picture>
+</div>
+<div align="center"><img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/></div>
+## `>` currently.running
+ 
+```yaml
+building:
+  - AMMFF deployment platform (FastAPI + PostgreSQL + Angular 17 + Docker)
+  - ML.NET (SSA) sales forecasting for the SFA suite
+  - Real-time dashboards with DevExtreme & ApexCharts
+researching:
+  - Missing-modality resilience in clinical multi-modal models
+  - Fusion weighting strategies beyond DrFuse / MedFuse
+learning:
+  - Cloud-native architecture · Kubernetes · event-driven microservices
+open_to:
+  - Software Engineering · AI/ML Engineering · Research collaboration
 ```
-
-</div>
-
-<br/>
-
-## 📈 Coding Activity
-
+ 
 <div align="center">
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-
-</div>
-
-<br/>
-
-## 🤝 Let's Connect
-
-<div align="center">
-  
-  <a href="mailto:dilinamewan07@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
-  </a>
-  <a href="https://www.linkedin.com/in/dilina-mewan-a9528a205/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="https://github.com/DilinaMewan">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  
-  <br/><br/>
-  
-  **📧 dilinamewan07@gmail.com** · **📍 Colombo, Sri Lanka** · **🎓 Software Engineering Student**
-  
-  <br/>
-  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20&height=120&section=footer"/>
-
-</div>
-
-<br/>
-
-<div align="center">
-  
-  ### 💡 *"Innovation distinguishes between a leader and a follower."* — Steve Jobs
-  
-  <sub>⭐ Star my repositories if you find them interesting!</sub>
-  
-  ![Visitor Count](https://profile-counter.glitch.me/DilinaMewan/count.svg)
-  
+<img width="100%" src="https://raw.githubusercontent.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/main/rainbow-line.gif"/>
+### `>` let's build something
+ 
+<a href="mailto:dilinamewan07@gmail.com"><img src="https://img.shields.io/badge/dilinamewan07@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/dilina-mewan-a9528a205/"><img src="https://img.shields.io/badge/Dilina_Mewan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://github.com/DilinaMewan"><img src="https://img.shields.io/badge/DilinaMewan-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
+ 
+<br/><br/>
+ 
+<i>"Measure it, ship it, then make it 88% faster."</i>
+ 
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,50:1E3A8A,100:0F172A&height=140&section=footer"/>
 </div>
